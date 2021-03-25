@@ -15,21 +15,27 @@ function move(udalost) {
 	let startTop = parseInt((window.getComputedStyle(hunter)).top);
 	let startLeft = parseInt((window.getComputedStyle(hunter)).left);
 
-
-
 	if (udalost.key == "ArrowDown") {
 		hunter.style.top = (startTop + 15) + "px";
 	} else if (udalost.key == "ArrowUp") {
-		hunter.style.top = (startTop - 15) + "px";
+		if (startTop > 0) {
+			hunter.style.top = (startTop - 15) + "px";
+		} else {
+			hunter.style.top = "0px";
+		}	
 	} else if (udalost.key == "ArrowLeft") {
-		hunter.style.left = (startLeft - 15) +"px";
+		if (startLeft > 0) {
+			hunter.style.left = (startLeft - 15) + "px";
+		} else {
+			hunter.style.left = "0px";
+		}	
 	} else if (udalost.key == "ArrowRight") {
 		hunter.style.left = (startLeft + 15) + "px";
 	} else {
-		alert("Use arrow keys to move the hunter.")
+		alert("Use arrow keys to move the hunter.");
+	}
+	console.log(startTop);
+	console.log(startLeft)	
 	}
 	
 	
-	console.log(startTop);
-	console.log(startLeft)
-}
