@@ -7,3 +7,29 @@ if (!( panacekX + panacekSirka < minceX || minceX + minceSirka < panacekX || pan
 
 
 // sem začni psát svůj program
+let hunter = document.getElementById("panacek")
+
+
+function move(udalost) {
+	console.log(udalost);
+	let startTop = parseInt((window.getComputedStyle(hunter)).top);
+	let startLeft = parseInt((window.getComputedStyle(hunter)).left);
+
+
+
+	if (udalost.key == "ArrowDown") {
+		hunter.style.top = (startTop + 15) + "px";
+	} else if (udalost.key == "ArrowUp") {
+		hunter.style.top = (startTop - 15) + "px";
+	} else if (udalost.key == "ArrowLeft") {
+		hunter.style.left = (startLeft - 15) +"px";
+	} else if (udalost.key == "ArrowRight") {
+		hunter.style.left = (startLeft + 15) + "px";
+	} else {
+		alert("Use arrow keys to move the hunter.")
+	}
+	
+	
+	console.log(startTop);
+	console.log(startLeft)
+}

@@ -41,7 +41,12 @@ body {
 	color: var(--score);
 }
 
-#panacek,
+#panacek {
+	position: absolute;
+	top: 350px;
+	left: 800px;	
+}
+
 #mince {
 	position: absolute;
 }
