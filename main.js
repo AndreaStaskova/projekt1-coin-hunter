@@ -7,11 +7,11 @@ if (!( panacekX + panacekSirka < minceX || minceX + minceSirka < panacekX || pan
 
 
 // sem začni psát svůj program
-let hunter = document.getElementById("panacek")
+let hunter = document.getElementById("panacek");
 
 
 function move(udalost) {
-	console.log(udalost);
+	//console.log(udalost);
 	let startTop = parseInt((window.getComputedStyle(hunter)).top);
 	let startLeft = parseInt((window.getComputedStyle(hunter)).left);
 
@@ -34,8 +34,20 @@ function move(udalost) {
 	} else {
 		alert("Use arrow keys to move the hunter.");
 	}
-	console.log(startTop);
-	console.log(startLeft)	
+	//console.log(startTop);
+	//console.log(startLeft);
+	
 	}
-	
-	
+/**
+ještě upravit aby se mince nedostávala na hranu window/view
+ * 
+ * @param {*} elementSelector 
+ */	
+function randomPlace(elementSelector) {
+	let coin = document.getElementById(elementSelector);
+	maxTop = window.innerHeight;
+	maxLeft = window.innerWidth;
+	coin.style.top = (Math.random() * maxTop) + "px"
+	coin.style.left = (Math.random() * maxLeft) + "px"
+
+}	
